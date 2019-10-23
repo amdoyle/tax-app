@@ -15,11 +15,12 @@ For Python, please implement a command line interface instead of the web interfa
 
 * Use [Canadian federal income tax rates](https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html#federal) for 2019.
 * The web application should include two screens:
-  * The first screen should display a form, which includes an input field and a button.
+  * The first screen should display a form, which includes an input field and a submit button.
     * The input field should accept the user's gross salary.
-    * Clicking the button should navigate to the second screen.
+    * Submitting the form should navigate to the second screen.
   * The second screen should display a breakdown of tax rates and amounts for each applicable tax bracket,
   as well as the total tax amount and effective tax rate.
+    * It should be possible to navigate back to the first screen.
 
 ## Instructions
 
@@ -28,7 +29,7 @@ at Points. Please **do not fork or submit pull requests** to this repository.
 
 ## Requirements
 
-* Implement your solution in JavaScript or using Python.
+* Implement your solution using JavaScript or Python.
 * If using JavaScript:
     * Create a simple, yet visually appealing and responsive design.
     * Target the latest stable version of [Google Chrome](https://www.google.com/chrome/).
