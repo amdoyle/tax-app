@@ -3,8 +3,8 @@ var path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
-  template: "./index.html",
-  filename: "./index.html"
+  filename: "./index.html",
+  template: "./index.html"
 });
 
 module.exports = {
@@ -27,7 +27,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-react", "@babel/preset-env"],
+            plugins: ["@babel/plugin-proposal-class-properties"]
+          }
         }
       }
     ]
