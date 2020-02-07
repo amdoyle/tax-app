@@ -1,19 +1,55 @@
 import * as React from "react";
-import tachyons from "styled-components-tachyons";
-import styled from "styled-components";
+import TaxBrackets from "./tax_bracket_elements";
+import Link from "../common/elements/links";
+import queryString from "query-string";
+import IncomeTax from "./income_tax";
+import { SectionHeader, SectionLabel } from "../common/elements/common-styles";
 
-const LI = styled.li`
-  font-size: 1rem;
-`;
+class TaxBracket extends React.Component {
+  constructor(props) {
+    super(props);
 
-const Bracket = ({ bracketElements }) => {
-  return <LI>{bracketElements.taxRate}</LI>;
-};
+    this.state = {
+      grossIncome: queryString.parse(location.search)["gi"],
+      taxBracket: [],
+      taxesOwed: 0
+    };
+  }
 
-const TaxBrackets = ({ brackets }) => {
-  return brackets.map((bracket, index) => {
-    return <Bracket bracketElements={bracket()} key={index} />;
-  });
-};
+  componentDidMount() {
+    const incomeTax = new IncomeTax(this.state.grossIncome);
+    const { taxesOwed, taxBracket } = incomeTax.getTaxBracket();
+    this.setState({
+      taxBracket,
+      taxesOwed
+    });
+  }
 
-export default TaxBrackets;
+  render() {
+    return (
+      <div>
+        <SectionHeader title={"2019 Tax Rates"} />
+        <div>
+          <SectionLabel
+            title={"Gross Income:"}
+            value={this.state.grossIncome}
+          />
+        </div>
+        <div>
+          <SectionLabel
+            title={"Total Nation Income Tax Oweing:"}
+            value={this.state.taxesOwed}
+          />
+        </div>
+
+        <SectionLabel title={"Your Tax Bracket:"} value={""} />
+        <ul>
+          <TaxBrackets brackets={this.state.taxBracket} />
+        </ul>
+        <Link linkHref="/" linkText="Check Another Income Level" />
+      </div>
+    );
+  }
+}
+
+export default TaxBracket;

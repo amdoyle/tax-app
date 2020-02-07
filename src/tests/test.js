@@ -1,12 +1,12 @@
 const { assert } = require("chai");
-const IncomeTax = require("../income_tax_rates/income_tax").default;
+const IncomeTax = require("../income_tax_brackets/income_tax").default;
 const {
   TAX_BRACKET_ONE,
   TAX_BRACKET_TWO,
   TAX_BRACKET_THREE,
   TAX_BRACKET_FOUR,
   TAX_BRACKET_FIVE
-} = require("../constants/2020_tax_rates");
+} = require("../constants/2020_tax_brackets");
 
 describe("IncomeTax", () => {
   const testCases = [
@@ -35,7 +35,7 @@ describe("IncomeTax", () => {
     {
       args: 175000,
       expected: {
-        taxesOwed: "38227.50",
+        taxesOwed: "37491.72",
         taxBracket: [
           TAX_BRACKET_ONE,
           TAX_BRACKET_TWO,

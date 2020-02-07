@@ -13,18 +13,20 @@ class IncomeTax {
 
   getTaxBracket() {
     const taxBracket = taxRates.TAX_BRACKETS.filter(
-      bracket => this.grossIncome >= bracket(0).min
+      bracket => this.grossIncome >= bracket(this.grossIncome).min
     );
+
+    const taxBrackets = taxBracket.map(bracket => bracket(this.grossIncome));
 
     const taxesOwed = this.roundDecimal(
-      taxBracket.reduce(this.calculateTaxOwed, 0)
+      taxBrackets.reduce(this.calculateTaxOwed, 0)
     );
 
-    return { taxesOwed, taxBracket };
+    return { taxesOwed, taxBracket: taxBrackets };
   }
 
   calculateTaxOwed = (taxesOwed, getTaxBracketAmount) =>
-    taxesOwed + getTaxBracketAmount(this.grossIncome).taxAmount;
+    taxesOwed + getTaxBracketAmount.taxAmount;
 }
 
 export default IncomeTax;

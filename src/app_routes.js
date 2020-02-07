@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import PageLayout from "./page_layouts/page_layout";
 import IncomeTaxForm from "./income_tax_form/tax_form";
-import TaxBrackets from "./income_tax_rates/tax_rates";
+import TaxBracket from "./income_tax_rates/tax_brackets";
 
 const PageLayoutWithRouter = withRouter(props => <PageLayout {...props} />);
 
@@ -17,7 +17,7 @@ const AppRoutes = () => {
       <PageLayoutWithRouter>
         <Switch>
           <Route exact path="/" component={IncomeTaxForm} />
-          <Route path="/2019" component={TaxBrackets} />
+          <Route path="/2019" component={TaxBracket} />
         </Switch>
       </PageLayoutWithRouter>
     </Router>
