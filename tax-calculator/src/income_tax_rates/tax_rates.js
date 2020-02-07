@@ -3,6 +3,7 @@ import TaxBrackets from "./tax_brackets";
 import Link from "../common/elements/links";
 import queryString from "query-string";
 import IncomeTax from "./income_tax";
+import { SectionHeader, SectionLabel } from "../common/elements/common-styles";
 
 class TaxBracket extends React.Component {
   constructor(props) {
@@ -27,13 +28,23 @@ class TaxBracket extends React.Component {
   render() {
     return (
       <div>
-        <h2>2019 Tax Rates: </h2>
-        <div>Gross Income: {this.state.grossIncome}</div>
+        <SectionHeader title={"2019 Tax Rates"} />
         <div>
-          Total Nation Income Tax Oweing:
-          {this.state.taxesOwed}
+          <SectionLabel
+            title={"Gross Income:"}
+            value={this.state.grossIncome}
+          />
         </div>
-        <div>Your Tax Rate: </div>
+        <div>
+          <SectionLabel
+            title={"Total Nation Income Tax Oweing:"}
+            value={this.state.taxesOwed}
+          />
+        </div>
+        <div>
+          <SectionLabel title={"Your Tax Rate:"} value={this.state.taxesOwed} />
+        </div>
+        <SectionLabel title={"Your Tax Bracket:"} value={""} />
         <ul>
           <TaxBrackets brackets={this.state.taxBracket} />
         </ul>

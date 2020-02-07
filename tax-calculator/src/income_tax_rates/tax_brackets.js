@@ -1,7 +1,13 @@
 import * as React from "react";
+import tachyons from "styled-components-tachyons";
+import styled from "styled-components";
+
+const LI = styled.li`
+  font-size: 1rem;
+`;
 
 const Bracket = ({ bracketElements }) => {
-  return <li>{bracketElements.taxRate}</li>;
+  return <LI>{bracketElements.taxRate}</LI>;
 };
 
 const TaxBrackets = ({ brackets }) => {

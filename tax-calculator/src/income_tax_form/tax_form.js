@@ -1,5 +1,8 @@
 import * as React from "react";
 import { IncomeInput, SubmitButton } from "../common/form-elements/input-field";
+import { SectionHeader } from "../common/elements/common-styles";
+import tachyons from "styled-components-tachyons";
+import styled from "styled-components";
 
 class IncomeTaxFrom extends React.Component {
   constructor(props) {
@@ -67,7 +70,7 @@ class IncomeTaxFrom extends React.Component {
   render() {
     return (
       <div>
-        <h2>Enter Your 2019 Income Inforation </h2>
+        <SectionHeader title={"Enter Your 2019 Income Inforation"} />
         <form onSubmit={this.onFormSubmit} method="get" action="/2019?">
           <IncomeInput
             labelText="Enter Your Gross Income:"
