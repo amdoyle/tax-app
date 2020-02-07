@@ -1,28 +1,17 @@
-# Developer Assignment Instructions
+# tax-calculator assignment
 
-A repository of developer assignments that are intended to completed by candidates for the Points Engineering Team.
+## Notes
 
-## Repository structure
-
-Each top-level directory in this repository contains one assignment.
-
-### Front-end developer assignments
-
-The following may be completed using JavaScript:
-
-* [omdb-auto-complete](./omdb-auto-complete)
-
-### Full-stack developer assignments
-
-The following may be completed using **JavaScript or Python**.
-
-* [autonomous-car](./autonomous-car)
-* [tax-calculator](./tax-calculator)
+- Based on the [Canadian federal income tax rates](https://www.canada.ca/en/revenue-agency/services/tax/individuals/frequently-asked-questions-individuals/canadian-income-tax-rates-individuals-current-previous-years.html#federal) for 2019.
+- The web application has include two screens:
+  - The first screen allows you to input your gross income
+  - The Second screen displays the income tax owed and the applicable taxe rates.
+- This project uses React, Mocha, Style components, and Styled components Tachyons and is bundled with Webpack
 
 ## Instructions
 
-Clone or download this repository and then submit your solution to **one** of the assignments to your contact at Points.
-Please **do not fork or submit pull requests** to this repository. 
-Please see the assignment-specific README.md files for additional information.
-
-Please [timebox](https://en.wikipedia.org/wiki/Timeboxing) your solution to at most one day.
+- Clone this repository
+- Install the module using `npm i`
+- To run locally run `npm run start` this will start and launch a dev server
+- To run a production build run `npm run build`
+- To run the test run `npm run coverage`
