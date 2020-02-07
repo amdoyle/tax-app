@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700&display=swap");
+
+:root {
+  --spacing-extra-small: 0.5rem;
+  --spacing-small: 1rem;
+  --spacing-medium: 1.5rem;
+  --spacing-large: 2rem;
+  --error-red: #a21623;
+  --blue: #027bb6;
+  --grey: #6b6c6f;
+  --black: #333;
+  --base-font-family: "Open Sans", sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: var(--base-font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body * {
+  box-sizing: border-box;
+}
